@@ -49,11 +49,12 @@ $active_members = get_active_members($conn);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System - Dashboard</title>
+    <title>ড্যাশবোর্ড</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -85,69 +86,41 @@ $active_members = get_active_members($conn);
             <div class="col-md-9 col-lg-10 content-wrapper">
                 <div class="row mb-4">
                     <div class="col-12">
-                        <h2>Dashboard</h2>
+                        <h2>ড্যাশবোর্ড</h2>
                     </div>
                 </div>
 
                 <!-- Statistics Cards -->
                 <div class="row mb-4">
-                    <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="col-md-3">
                         <div class="card stat-card bg-primary text-white h-100">
                             <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <h6 class="card-title">Total Books</h6>
-                                        <h2 class="mb-0"><?php echo $total_books; ?></h2>
-                                    </div>
-                                    <div class="stat-icon">
-                                        <i class="fas fa-book"></i>
-                                    </div>
-                                </div>
+                                <h5 class="card-title">মোট বই</h5>
+                                <h2 class="card-text"><?php echo $total_books; ?></h2>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="col-md-3">
                         <div class="card stat-card bg-success text-white h-100">
                             <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <h6 class="card-title">Total Members</h6>
-                                        <h2 class="mb-0"><?php echo $total_members; ?></h2>
-                                    </div>
-                                    <div class="stat-icon">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                </div>
+                                <h5 class="card-title">মোট সদস্য</h5>
+                                <h2 class="card-text"><?php echo $total_members; ?></h2>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="col-md-3">
                         <div class="card stat-card bg-info text-white h-100">
                             <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <h6 class="card-title">Active Borrowings</h6>
-                                        <h2 class="mb-0"><?php echo $active_borrowings; ?></h2>
-                                    </div>
-                                    <div class="stat-icon">
-                                        <i class="fas fa-exchange-alt"></i>
-                                    </div>
-                                </div>
+                                <h5 class="card-title">মোট ধার</h5>
+                                <h2 class="card-text"><?php echo $total_borrowings; ?></h2>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="col-md-3">
                         <div class="card stat-card bg-warning text-white h-100">
                             <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <h6 class="card-title">Total Borrowings</h6>
-                                        <h2 class="mb-0"><?php echo $total_borrowings; ?></h2>
-                                    </div>
-                                    <div class="stat-icon">
-                                        <i class="fas fa-chart-line"></i>
-                                    </div>
-                                </div>
+                                <h5 class="card-title">সক্রিয় ধার</h5>
+                                <h2 class="card-text"><?php echo $active_borrowings; ?></h2>
                             </div>
                         </div>
                     </div>
@@ -159,7 +132,7 @@ $active_members = get_active_members($conn);
                         <div class="card h-100">
                             <div class="card-header bg-danger text-white">
                                 <h5 class="card-title mb-0">
-                                    <i class="fas fa-exclamation-triangle me-2"></i>Overdue Books
+                                    <i class="fas fa-exclamation-triangle me-2"></i>মেয়াদ উত্তীর্ণ বই
                                 </h5>
                             </div>
                             <div class="card-body">
@@ -167,9 +140,9 @@ $active_members = get_active_members($conn);
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Book</th>
-                                                <th>Member</th>
-                                                <th>Days Overdue</th>
+                                                <th>বই</th>
+                                                <th>সদস্য</th>
+                                                <th>দিন অতিবাহিত</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -185,7 +158,7 @@ $active_members = get_active_members($conn);
                                                 </td>
                                                 <td>
                                                     <span class="badge bg-danger">
-                                                        <?php echo $book['days_overdue']; ?> days
+                                                        <?php echo $book['days_overdue']; ?> দিন
                                                     </span>
                                                 </td>
                                             </tr>
@@ -202,7 +175,7 @@ $active_members = get_active_members($conn);
                         <div class="card h-100">
                             <div class="card-header bg-info text-white">
                                 <h5 class="card-title mb-0">
-                                    <i class="fas fa-clock me-2"></i>Recent Borrowings
+                                    <i class="fas fa-clock me-2"></i>সাম্প্রতিক ধার
                                 </h5>
                             </div>
                             <div class="card-body">
@@ -210,9 +183,9 @@ $active_members = get_active_members($conn);
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Book</th>
-                                                <th>Member</th>
-                                                <th>Date</th>
+                                                <th>বই</th>
+                                                <th>সদস্য</th>
+                                                <th>তারিখ</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -243,7 +216,7 @@ $active_members = get_active_members($conn);
                         <div class="card h-100">
                             <div class="card-header bg-success text-white">
                                 <h5 class="card-title mb-0">
-                                    <i class="fas fa-star me-2"></i>Popular Books
+                                    <i class="fas fa-chart-line me-2"></i>সাম্প্রতিক ফেরত
                                 </h5>
                             </div>
                             <div class="card-body">
@@ -251,9 +224,9 @@ $active_members = get_active_members($conn);
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Book</th>
-                                                <th>Book No</th>
-                                                <th>Times Borrowed</th>
+                                                <th>বই</th>
+                                                <th>বই নং</th>
+                                                <th>ধার সংখ্যা</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -263,7 +236,7 @@ $active_members = get_active_members($conn);
                                                 <td><?php echo htmlspecialchars($book['book_no']); ?></td>
                                                 <td>
                                                     <span class="badge bg-success">
-                                                        <?php echo $book['borrow_count']; ?> times
+                                                        <?php echo $book['borrow_count']; ?> বার
                                                     </span>
                                                 </td>
                                             </tr>
@@ -280,7 +253,7 @@ $active_members = get_active_members($conn);
                         <div class="card h-100">
                             <div class="card-header bg-primary text-white">
                                 <h5 class="card-title mb-0">
-                                    <i class="fas fa-user-check me-2"></i>Active Members
+                                    <i class="fas fa-user-check me-2"></i>সক্রিয় সদস্য
                                 </h5>
                             </div>
                             <div class="card-body">
@@ -288,9 +261,9 @@ $active_members = get_active_members($conn);
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Member</th>
-                                                <th>Member ID</th>
-                                                <th>Total Borrowings</th>
+                                                <th>সদস্য</th>
+                                                <th>সদস্য আইডি</th>
+                                                <th>মোট ধার</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -300,7 +273,7 @@ $active_members = get_active_members($conn);
                                                 <td><?php echo htmlspecialchars($member['member_id']); ?></td>
                                                 <td>
                                                     <span class="badge bg-primary">
-                                                        <?php echo $member['borrow_count']; ?> books
+                                                        <?php echo $member['borrow_count']; ?> বই
                                                     </span>
                                                 </td>
                                             </tr>

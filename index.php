@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>লাইব্রেরি ব্যবস্থাপনা সিস্টেম</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Hind Siliguri', sans-serif;
         }
 
         body {
@@ -157,28 +158,27 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <h1>Welcome Back</h1>
-            <p>Please login to your account</p>
+            <h1>স্বাগতম</h1>
+            <p>আপনার অ্যাকাউন্টে লগইন করুন</p>
         </div>
-        
         <form method="POST" action="auth/login.php" id="loginForm">
             <div class="error-message" id="error-message"></div>
             
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" name="username" placeholder="Username" required id="username">
+                <input type="text" name="username" placeholder="ইউজারনেম" required id="username">
             </div>
             
             <div class="input-group">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Password" required id="password">
+                <input type="password" name="password" placeholder="পাসওয়ার্ড" required id="password">
             </div>
             
-            <button type="submit" class="login-button">Login</button>
+            <button type="submit" class="login-button">লগইন</button>
         </form>
         
         <div class="login-footer">
-            <p>Library Management System &copy; <?php echo date('Y'); ?></p>
+            <p>লাইব্রেরি ব্যবস্থাপনা সিস্টেম &copy; <?php echo date('Y'); ?></p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
